@@ -1,0 +1,33 @@
+{
+    "name": "kaggle-dev",
+    "dockerComposeFile": [
+        "../docker-compose.yaml"
+    ],
+    "service": "kaggle",
+    "workspaceFolder": "/home/workspace/",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                "editor.formatOnSave": true,
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll": true
+                    }
+                },
+                "python.formatting.provider": "ruff",
+                "ruff.interpreter": [
+                    "/opt/conda/bin/python"
+                ],
+                "ruff.lint.args": [
+                    "--config=/home/workspace/pyproject.toml"
+                ]
+            }
+        }
+    }
+}

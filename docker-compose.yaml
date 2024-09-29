@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  kaggle:
+    image: gcr.io/kaggle-images/python
+    tty: true
+    container_name: kaggle
+    working_dir: '/home/workspace/'
+    volumes:
+      - ./:/home/workspace
+      - ./data/input:/kaggle/input/
+    environment:
+      TZ: Asia/Tokyo
